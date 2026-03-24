@@ -1,0 +1,125 @@
+.header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 7, 15, 0.85);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px var(--accent));
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo-text {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.logo-accent {
+  color: var(--accent);
+}
+
+/* Steps */
+.steps-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.4;
+  transition: var(--transition);
+}
+
+.step-item.active,
+.step-item.done {
+  opacity: 1;
+}
+
+.step-bubble {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.step-item.active .step-bubble {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(124, 92, 252, 0.12);
+  box-shadow: 0 0 16px rgba(124, 92, 252, 0.35);
+}
+
+.step-item.done .step-bubble {
+  border-color: var(--accent2);
+  color: var(--accent2);
+  background: rgba(0, 229, 195, 0.1);
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.step-item.active .step-label {
+  color: var(--text);
+}
+
+.step-connector {
+  width: 28px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 4px;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.step-connector.filled {
+  background: var(--accent2);
+}
+
+@media (max-width: 640px) {
+  .step-label { display: none; }
+  .header-inner { gap: 1rem; }
+  .logo-text { font-size: 1.1rem; }
+  .step-connector { width: 16px; }
+}

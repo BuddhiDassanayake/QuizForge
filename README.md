@@ -11,7 +11,7 @@ quiz-app/
 ├── backend/          # Node.js + Express API
 │   ├── server.js     # Main server (PDF parsing + Gemini AI)
 │   ├── package.json
-│   └── .env          # ← You create this (see below)
+│   └── .env          
 │
 └── frontend/         # React app
     ├── src/
@@ -28,53 +28,6 @@ quiz-app/
 
 ---
 
-## 🚀 Setup Instructions
-
-### 1. Get a Gemini API Key
-1. Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Click **"Create API Key"**
-3. Copy the key
-
-### 2. Configure the Backend
-
-```bash
-cd backend
-cp .env.example .env
-```
-
-Open `.env` and paste your key:
-```
-GEMINI_API_KEY=your_actual_key_here
-PORT=5000
-```
-
-### 3. Install & Run the Backend
-
-```bash
-cd backend
-npm install
-npm start
-```
-
-You should see:
-```
-🚀 Quiz Generator API running on http://localhost:5000
-   Gemini API Key: ✅ Set
-```
-
-### 4. Install & Run the Frontend
-
-Open a **new terminal**:
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-The app opens at **http://localhost:3000**
-
----
 
 ## ✨ Features
 
